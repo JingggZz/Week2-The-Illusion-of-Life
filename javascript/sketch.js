@@ -54,7 +54,7 @@ function draw() {
   ambientMaterial(slider.value(), 0, 100);
 
   if(random(1)>0.97){
-    for(var i=0;i<100;i++){
+    for(var i=0;i<50;i++){
       var p = new Particle();
       particle.push(p);
     }
