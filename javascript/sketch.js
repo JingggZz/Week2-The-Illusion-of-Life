@@ -60,18 +60,6 @@ function draw() {
     }
   }
 
-  // if(displayState = 0){
-  //   for(var i =particle.length -1; i>=0; i--){
-  //     particle[i].update();
-  //     particle[i].showSphere();
-  //   }
-  // }else{
-  //   for(var i =particle.length -1; i>=0; i--){
-  //     particle[i].update();
-  //     particle[i].showSquare();
-  //   }
-  // }
-
   for(var i =particle.length -1; i>=0; i--){
     particle[i].update();
     if(displayState == 0){
