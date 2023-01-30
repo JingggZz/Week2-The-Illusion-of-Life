@@ -6,13 +6,23 @@ class Particle{
   update(){
     this.pos.add(this.vel);
   }
-  show(){
+  showSphere(){
     push();
     
     noStroke();
     fill(255,80);
     translate(this.pos.x,this.pos.y,this.pos.z);
-    sphere(10);
+    sphere(6);
+    
+    pop();
+  }
+  showSquare(){
+    push();
+    
+    noStroke();
+    fill(255,80);
+    translate(this.pos.x,this.pos.y,this.pos.z);
+    box(10);
     
     pop();
   }
@@ -50,9 +60,25 @@ function draw() {
     }
   }
 
+  // if(displayState = 0){
+  //   for(var i =particle.length -1; i>=0; i--){
+  //     particle[i].update();
+  //     particle[i].showSphere();
+  //   }
+  // }else{
+  //   for(var i =particle.length -1; i>=0; i--){
+  //     particle[i].update();
+  //     particle[i].showSquare();
+  //   }
+  // }
+
   for(var i =particle.length -1; i>=0; i--){
     particle[i].update();
-    particle[i].show();
+    if(displayState == 0){
+      particle[i].showSphere();
+    }else{
+      particle[i].showSquare();
+    }
   }
 }
 
@@ -85,19 +111,19 @@ function addGUI()
 function handleButtonPress()
 {
     
-  // if(displayState < 1)
-  // {
-  //   displayState++;
-  // }else{
-  //   displayState = 0;
-  // }
+  if(displayState < 1)
+  {
+    displayState++;
+  }else{
+    displayState = 0;
+  }
 
-  // if(displayState == 0)
-  // {
-  //     button.html("Change to Square");
-  // }else if(displayState == 1){
-  //     button.html("Change to Circle");
-  // }
+  if(displayState == 0)
+  {
+      button.html("Change to Square");
+  }else if(displayState == 1){
+      button.html("Change to Circle");
+  }
 }
 
 function windowResized() {
