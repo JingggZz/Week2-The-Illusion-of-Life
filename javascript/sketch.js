@@ -10,7 +10,7 @@ class Particle{
     push();
     
     noStroke();
-    fill(255,80);
+    fill(255,100);
     translate(this.pos.x,this.pos.y,this.pos.z);
     sphere(6);
     
@@ -20,7 +20,7 @@ class Particle{
     push();
     
     noStroke();
-    fill(255,80);
+    fill(255,100);
     translate(this.pos.x,this.pos.y,this.pos.z);
     box(10);
     
